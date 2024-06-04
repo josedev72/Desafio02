@@ -69,10 +69,10 @@ namespace Desafio02
 
         private void dgvDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = dgvDatos.Rows[e.RowIndex];
-                
+
                 AbrirForm(selectedRow, cmbTablas.Text);
             }
         }
@@ -107,12 +107,26 @@ namespace Desafio02
                 default:
                     break;
             }
-            
+
         }
 
         private void FormProducto_FormClosed(object sender, FormClosedEventArgs e)
-        {            
+        {
             TraerTabla("Producto");
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            switch (cmbTablas.Text)
+            {
+                case "Producto":
+                    FormProducto fprod = new FormProducto(0);
+                    fprod.FormClosed += FormProducto_FormClosed;
+                    fprod.ShowDialog(); 
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

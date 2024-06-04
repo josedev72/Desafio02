@@ -31,6 +31,7 @@
             label1 = new Label();
             cmbTablas = new ComboBox();
             dgvDatos = new DataGridView();
+            btnNuevo = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
@@ -65,11 +66,24 @@
             dgvDatos.TabIndex = 2;
             dgvDatos.CellDoubleClick += dgvDatos_CellDoubleClick;
             // 
+            // btnNuevo
+            // 
+            btnNuevo.FlatStyle = FlatStyle.Flat;
+            btnNuevo.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNuevo.Location = new Point(458, 23);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(101, 32);
+            btnNuevo.TabIndex = 8;
+            btnNuevo.Text = "Nuevo";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1006, 450);
+            Controls.Add(btnNuevo);
             Controls.Add(dgvDatos);
             Controls.Add(cmbTablas);
             Controls.Add(label1);
@@ -86,5 +100,6 @@
         private Label label1;
         private ComboBox cmbTablas;
         private DataGridView dgvDatos;
+        private Button btnNuevo;
     }
 }

@@ -65,8 +65,8 @@ namespace Desafio02
                 p.Id = 0;
                 p.Descripcion = txtDescripcion.Text.Trim();
                 p.Costo = Convert.ToDecimal(txtCosto.Text.Trim());
-                p.PrecioVenta = Convert.ToDecimal(txtDescripcion.Text.Trim());
-                p.Stock = Convert.ToInt32(txtDescripcion.Text.Trim());
+                p.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
+                p.Stock = Convert.ToInt32(txtStock.Text.Trim());
                 p.IdUsuario = Convert.ToInt32(txtIdUsuario.Text.Trim());
 
                 ProductoData.CrearProducto(p);
@@ -78,6 +78,14 @@ namespace Desafio02
                 p.Id = Convert.ToInt32(txtId.Text);
                 p.Descripcion = txtDescripcion.Text.Trim();
                 p.Costo = Convert.ToDecimal(txtCosto.Text.Trim());
+
+                decimal precioVenta;
+
+                if (Decimal.TryParse(txtPrecioVenta.Text.Trim(), out precioVenta))
+                {
+                    p.PrecioVenta = precioVenta;
+                }
+
                 p.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
                 p.Stock = Convert.ToInt32(txtStock.Text.Trim());
                 p.IdUsuario = Convert.ToInt32(txtIdUsuario.Text.Trim());
