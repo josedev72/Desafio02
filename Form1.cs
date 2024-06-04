@@ -82,13 +82,13 @@ namespace Desafio02
 
         private void AbrirForm(DataGridViewRow fila, string tabla)
         {
-            int id=0;
+            int id = 0;
             // Extraer datos de la fila seleccionada
             if (dgvDatos.Rows.Count > 0)
             {
                 id = Convert.ToInt32(fila.Cells[0].Value);
             }
-            
+
 
             switch (tabla)
             {
@@ -147,6 +147,22 @@ namespace Desafio02
                 this.Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
                 this.tabla = cmbTablas.Text.Trim();
 
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (this.Id > 0 && this.tabla != "")
+            {
+                switch (this.tabla)
+                {
+                    case "Producto":
+                        ProductoData.EliminarProducto(this.Id);
+                        TraerTabla(this.tabla);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

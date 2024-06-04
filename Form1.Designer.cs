@@ -32,6 +32,7 @@
             cmbTablas = new ComboBox();
             dgvDatos = new DataGridView();
             btnNuevo = new Button();
+            btnBorrar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
@@ -59,10 +60,10 @@
             // dgvDatos
             // 
             dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDatos.Location = new Point(8, 66);
+            dgvDatos.Location = new Point(12, 66);
             dgvDatos.Name = "dgvDatos";
             dgvDatos.RowTemplate.Height = 25;
-            dgvDatos.Size = new Size(972, 328);
+            dgvDatos.Size = new Size(968, 328);
             dgvDatos.TabIndex = 2;
             dgvDatos.CellClick += dgvDatos_CellClick;
             dgvDatos.CellDoubleClick += dgvDatos_CellDoubleClick;
@@ -79,11 +80,25 @@
             btnNuevo.UseVisualStyleBackColor = true;
             btnNuevo.Click += btnNuevo_Click;
             // 
+            // btnBorrar
+            // 
+            btnBorrar.BackColor = Color.Red;
+            btnBorrar.FlatStyle = FlatStyle.Flat;
+            btnBorrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBorrar.Location = new Point(576, 22);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(101, 32);
+            btnBorrar.TabIndex = 8;
+            btnBorrar.Text = "Borrar";
+            btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.Click += btnBorrar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1006, 450);
+            Controls.Add(btnBorrar);
             Controls.Add(btnNuevo);
             Controls.Add(dgvDatos);
             Controls.Add(cmbTablas);
@@ -102,5 +117,6 @@
         private ComboBox cmbTablas;
         private DataGridView dgvDatos;
         private Button btnNuevo;
+        private Button btnBorrar;
     }
 }
