@@ -7,6 +7,9 @@ namespace Desafio02
 {
     public partial class Form1 : Form
     {
+        private int Id;
+        private string tabla;
+
         public Form1()
         {
             InitializeComponent();
@@ -79,8 +82,13 @@ namespace Desafio02
 
         private void AbrirForm(DataGridViewRow fila, string tabla)
         {
+            int id=0;
             // Extraer datos de la fila seleccionada
-            int id = Convert.ToInt32(fila.Cells[0].Value);
+            if (dgvDatos.Rows.Count > 0)
+            {
+                id = Convert.ToInt32(fila.Cells[0].Value);
+            }
+            
 
             switch (tabla)
             {
@@ -122,10 +130,23 @@ namespace Desafio02
                 case "Producto":
                     FormProducto fprod = new FormProducto(0);
                     fprod.FormClosed += FormProducto_FormClosed;
-                    fprod.ShowDialog(); 
+                    fprod.ShowDialog();
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void dgvDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgvDatos.Rows[e.RowIndex];
+
+                // Aquí puedes acceder a las celdas de la fila seleccionada
+                this.Id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                this.tabla = cmbTablas.Text.Trim();
+
             }
         }
     }

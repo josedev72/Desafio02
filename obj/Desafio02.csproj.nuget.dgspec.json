@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Sistemas\\C#\\Tutoriales\\vs2022\\Coderhouse\\Desafio02\\Desafio02\\Desafio02.csproj": {}
+    "D:\\Coderhouse\\Desafio02\\Desafio02.csproj": {}
   },
   "projects": {
-    "D:\\Sistemas\\C#\\Tutoriales\\vs2022\\Coderhouse\\Desafio02\\Desafio02\\Desafio02.csproj": {
+    "D:\\Coderhouse\\Desafio02\\Desafio02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sistemas\\C#\\Tutoriales\\vs2022\\Coderhouse\\Desafio02\\Desafio02\\Desafio02.csproj",
+        "projectUniqueName": "D:\\Coderhouse\\Desafio02\\Desafio02.csproj",
         "projectName": "Desafio02",
-        "projectPath": "D:\\Sistemas\\C#\\Tutoriales\\vs2022\\Coderhouse\\Desafio02\\Desafio02\\Desafio02.csproj",
+        "projectPath": "D:\\Coderhouse\\Desafio02\\Desafio02.csproj",
         "packagesPath": "C:\\Users\\joseg\\.nuget\\packages\\",
-        "outputPath": "D:\\Sistemas\\C#\\Tutoriales\\vs2022\\Coderhouse\\Desafio02\\Desafio02\\obj\\",
+        "outputPath": "D:\\Coderhouse\\Desafio02\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

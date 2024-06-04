@@ -12,9 +12,11 @@ namespace Desafio02
 {
     public partial class FormUsuario : Form
     {
-        public FormUsuario()
+        private int id;
+        public FormUsuario(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
     }
 }
