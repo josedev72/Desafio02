@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Desafio02.DataBase;
+using Desafio02.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +29,29 @@ namespace Desafio02
         private void FormVenta_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Venta vta = new Venta();
+            if (this.id == 0)
+            {
+                vta.Id = 0;
+                vta.Comentarios = txtComentarios.Text.Trim();
+                vta.IdUsuario = Convert.ToInt32(txtIdUsuario.Text.Trim());
+                
+                VentaData.CrearVenta(vta);
+            }
+            else
+            {
+                vta.Id = Convert.ToInt32(txtId.Text);
+                vta.Comentarios = txtComentarios.Text.Trim();
+                vta.IdUsuario = Convert.ToInt32(txtIdUsuario.Text.Trim());
+
+                VentaData.ModificarVenta(vta);
+            }
+
+            this.Close();
         }
     }
 }

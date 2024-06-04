@@ -63,7 +63,6 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(101, 27);
             txtId.TabIndex = 0;
-            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // btnVolver
             // 

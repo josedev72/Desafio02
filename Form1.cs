@@ -193,6 +193,21 @@ namespace Desafio02
                         ProductoData.EliminarProducto(this.Id);
                         TraerTabla(this.tabla);
                         break;
+
+                    case "ProductoVendido":
+                        ProductoVendidoData.EliminarProductoVendido(this.Id);
+                        TraerTabla(this.tabla);
+                        break;
+
+                    case "Usuario":
+                        UsuarioData.EliminarUsuario(this.Id);
+                        TraerTabla(this.tabla);
+                        break;
+
+                    case "Venta":
+                        VentaData.EliminarVenta(this.Id);
+                        TraerTabla(this.tabla);
+                        break;
                     default:
                         break;
                 }

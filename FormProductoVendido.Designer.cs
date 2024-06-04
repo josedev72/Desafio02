@@ -82,7 +82,6 @@
             txtIdVenta.Name = "txtIdVenta";
             txtIdVenta.Size = new Size(175, 27);
             txtIdVenta.TabIndex = 17;
-            txtIdVenta.TextAlign = HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -132,7 +131,6 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(101, 27);
             txtId.TabIndex = 13;
-            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -160,6 +158,7 @@
             Controls.Add(txtId);
             Controls.Add(label1);
             Name = "FormProductoVendido";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormProductoVendido";
             Load += FormProductoVendido_Load;
             ResumeLayout(false);

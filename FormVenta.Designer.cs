@@ -48,6 +48,7 @@
             btnAceptar.TabIndex = 35;
             btnAceptar.Text = "Modificar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnVolver
             // 
@@ -69,7 +70,6 @@
             txtIdUsuario.Name = "txtIdUsuario";
             txtIdUsuario.Size = new Size(248, 27);
             txtIdUsuario.TabIndex = 31;
-            txtIdUsuario.TextAlign = HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -109,7 +109,6 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(101, 27);
             txtId.TabIndex = 27;
-            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -135,6 +134,7 @@
             Controls.Add(txtId);
             Controls.Add(label1);
             Name = "FormVenta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormVenta";
             Load += FormVenta_Load;
             ResumeLayout(false);

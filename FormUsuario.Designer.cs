@@ -96,7 +96,6 @@
             txtPass.PasswordChar = '*';
             txtPass.Size = new Size(248, 27);
             txtPass.TabIndex = 18;
-            txtPass.TextAlign = HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -116,7 +115,6 @@
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(248, 27);
             txtNombreUsuario.TabIndex = 17;
-            txtNombreUsuario.TextAlign = HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -136,7 +134,6 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(248, 27);
             txtApellido.TabIndex = 16;
-            txtApellido.TextAlign = HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -176,7 +173,6 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(101, 27);
             txtId.TabIndex = 13;
-            txtId.TextAlign = HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -208,6 +204,7 @@
             Controls.Add(txtId);
             Controls.Add(label1);
             Name = "FormUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormUsuario";
             Load += FormUsuario_Load;
             ResumeLayout(false);
