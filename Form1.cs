@@ -87,8 +87,8 @@ namespace Desafio02
             if (dgvDatos.Rows.Count > 0)
             {
                 id = Convert.ToInt32(fila.Cells[0].Value);
+                this.Id = id;
             }
-
 
             switch (tabla)
             {

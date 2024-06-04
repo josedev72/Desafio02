@@ -28,7 +28,33 @@ namespace Desafio02
 
         private void FormVenta_Load(object sender, EventArgs e)
         {
+            Limpiar();
+            Venta venta = new Venta();
+            if (this.id == 0)
+            {
+                btnAceptar.Text = "Agregar";
+                txtComentarios.Focus();
+            }
+            else
+            {
+                btnAceptar.Text = "Editar";
+                venta = VentaData.ObtenerVenta(this.id);
+                CargarVenta(venta);
+            }
+        }
 
+        private void CargarVenta(Venta venta)
+        {
+            txtId.Text = venta.Id.ToString();
+            txtComentarios.Text = venta.Comentarios.ToString();
+            txtIdUsuario.Text = venta.IdUsuario.ToString();
+
+            txtComentarios.Focus();
+        }
+
+        private void Limpiar()
+        {
+            txtId.Text = txtComentarios.Text = txtIdUsuario.Text = string.Empty;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
