@@ -74,6 +74,7 @@
             Controls.Add(cmbTablas);
             Controls.Add(label1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Datos - Desafio 2";
             ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);

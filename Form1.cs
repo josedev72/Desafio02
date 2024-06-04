@@ -85,25 +85,27 @@ namespace Desafio02
             {
                 case "Producto":
                     FormProducto formProducto = new FormProducto(id);
+                    formProducto.ShowDialog();
                     break;
 
                 case "ProductoVendido":
                     FormProductoVendido formProductoVendido = new FormProductoVendido(id);
+                    formProductoVendido.ShowDialog();
                     break;
 
                 case "Usuario":
                     FormUsuario formUsuario = new FormUsuario(id);
+                    formUsuario.ShowDialog();
                     break;
 
                 case "Venta":
                     FormVenta formVenta = new FormVenta(id);
+                    formVenta.ShowDialog();
                     break;
                 default:
                     break;
             }
-            // Crear una instancia de FormProducto y pasar los datos
             
-            formulario.ShowDialog(); // Mostrar el formulario como un cuadro de diálogo modal
         }
     }
 }
