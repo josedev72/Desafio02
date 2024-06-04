@@ -19,7 +19,7 @@ namespace Desafio02
             TraerTabla(opcionSeleccionada);
         }
 
-        private void TraerTabla(string? opcionSeleccionada)
+        public void TraerTabla(string? opcionSeleccionada)
         {
             switch (opcionSeleccionada)
             {
@@ -72,6 +72,7 @@ namespace Desafio02
             if (e.RowIndex >= 0) 
             {
                 DataGridViewRow selectedRow = dgvDatos.Rows[e.RowIndex];
+                
                 AbrirForm(selectedRow, cmbTablas.Text);
             }
         }
@@ -85,6 +86,7 @@ namespace Desafio02
             {
                 case "Producto":
                     FormProducto formProducto = new FormProducto(id);
+                    formProducto.FormClosed += FormProducto_FormClosed;
                     formProducto.ShowDialog();
                     break;
 
@@ -106,6 +108,11 @@ namespace Desafio02
                     break;
             }
             
+        }
+
+        private void FormProducto_FormClosed(object sender, FormClosedEventArgs e)
+        {            
+            TraerTabla("Producto");
         }
     }
 }

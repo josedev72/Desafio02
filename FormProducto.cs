@@ -34,7 +34,7 @@ namespace Desafio02
             }
             else
             {
-                btnAceptar.Text = "Editar";                
+                btnAceptar.Text = "Editar";
                 producto = ProductoData.ObtenerProducto(Id);
                 CargarProducto(producto);
             }
@@ -42,7 +42,7 @@ namespace Desafio02
 
         private void Limpiar()
         {
-            txtId.Text = txtDescripcion.Text = txtCosto.Text = txtPrecioVenta.Text = 
+            txtId.Text = txtDescripcion.Text = txtCosto.Text = txtPrecioVenta.Text =
                 txtStock.Text = txtIdUsuario.Text = string.Empty;
         }
 
@@ -55,6 +55,38 @@ namespace Desafio02
             txtStock.Text = producto.Stock.ToString();
             txtIdUsuario.Text = producto.IdUsuario.ToString();
             txtDescripcion.Focus();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (Id == 0)
+            {
+                Producto p = new Producto();
+                p.Id = 0;
+                p.Descripcion = txtDescripcion.Text.Trim();
+                p.Costo = Convert.ToDecimal(txtCosto.Text.Trim());
+                p.PrecioVenta = Convert.ToDecimal(txtDescripcion.Text.Trim());
+                p.Stock = Convert.ToInt32(txtDescripcion.Text.Trim());
+                p.IdUsuario = Convert.ToInt32(txtIdUsuario.Text.Trim());
+
+                ProductoData.CrearProducto(p);
+                
+            }
+            else
+            {
+                Producto p = new Producto();
+                p.Id = Convert.ToInt32(txtId.Text);
+                p.Descripcion = txtDescripcion.Text.Trim();
+                p.Costo = Convert.ToDecimal(txtCosto.Text.Trim());
+                p.PrecioVenta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
+                p.Stock = Convert.ToInt32(txtStock.Text.Trim());
+                p.IdUsuario = Convert.ToInt32(txtIdUsuario.Text.Trim());
+
+                ProductoData.ModificarProducto(p);
+            }
+
+            
+            this.Close();
         }
     }
 }

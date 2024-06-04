@@ -184,6 +184,7 @@
             btnAceptar.TabIndex = 7;
             btnAceptar.Text = "Modificar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // FormProducto
             // 
