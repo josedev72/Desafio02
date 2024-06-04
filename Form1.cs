@@ -1,6 +1,7 @@
 using Desafio02.DataBase;
 using Desafio02.Models;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Desafio02
 {
@@ -25,7 +26,7 @@ namespace Desafio02
                 case "Producto":
                     CargarDGVProd(ProductoData.ListarProductos());
                     break;
-                
+
                 case "ProductoVendido":
                     CargarDGVProdVendido(ProductoVendidoData.ListarProductoVendido());
                     break;
@@ -64,6 +65,45 @@ namespace Desafio02
         {
             dgvDatos.DataSource = null;
             dgvDatos.DataSource = lista;
+        }
+
+        private void dgvDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                DataGridViewRow selectedRow = dgvDatos.Rows[e.RowIndex];
+                AbrirForm(selectedRow, cmbTablas.Text);
+            }
+        }
+
+        private void AbrirForm(DataGridViewRow fila, string tabla)
+        {
+            // Extraer datos de la fila seleccionada
+            int id = Convert.ToInt32(fila.Cells[0].Value);
+
+            switch (tabla)
+            {
+                case "Producto":
+                    FormProducto formProducto = new FormProducto(id);
+                    break;
+
+                case "ProductoVendido":
+                    FormProductoVendido formProductoVendido = new FormProductoVendido(id);
+                    break;
+
+                case "Usuario":
+                    FormUsuario formUsuario = new FormUsuario(id);
+                    break;
+
+                case "Venta":
+                    FormVenta formVenta = new FormVenta(id);
+                    break;
+                default:
+                    break;
+            }
+            // Crear una instancia de FormProducto y pasar los datos
+            
+            formulario.ShowDialog(); // Mostrar el formulario como un cuadro de diálogo modal
         }
     }
 }

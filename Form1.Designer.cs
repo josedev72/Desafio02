@@ -63,6 +63,7 @@
             dgvDatos.RowTemplate.Height = 25;
             dgvDatos.Size = new Size(972, 328);
             dgvDatos.TabIndex = 2;
+            dgvDatos.CellDoubleClick += dgvDatos_CellDoubleClick;
             // 
             // Form1
             // 
