@@ -153,7 +153,7 @@ namespace Desafio02.DataBase
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    string query = "Delete * From ProductoVendido Where Id=@Id";
+                    string query = "Delete From ProductoVendido Where Id=@Id";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
