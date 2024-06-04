@@ -28,16 +28,16 @@ namespace Desafio02.DataBase
                     string query = "SELECT Id,IdProducto,Stock,IdVenta FROM ProductoVendido WHERE Id = @id";
                     SqlCommand command = new SqlCommand(query, connection);
 
-                    command.Parameters.AddWithValue("Id", id);
+                    command.Parameters.AddWithValue("@Id", id);
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            ProductoVendidoEncontrado.Id = (int)reader["Id"];
-                            ProductoVendidoEncontrado.IdProducto = Convert.ToInt32(reader["Comentarios"].ToString());
-                            ProductoVendidoEncontrado.Stock = Convert.ToInt32(reader["IdUsuario"].ToString());
-                            ProductoVendidoEncontrado.IdVenta = Convert.ToInt32(reader["IdVenta"].ToString());
+                            ProductoVendidoEncontrado.Id = Convert.ToInt32(reader["Id"].ToString());
+                            ProductoVendidoEncontrado.IdProducto = Convert.ToInt32(reader["IdProducto"].ToString());
+                            ProductoVendidoEncontrado.Stock = Convert.ToDecimal(reader["Stock"].ToString());
+                            ProductoVendidoEncontrado.IdVenta = Convert.ToDecimal(reader["IdVenta"].ToString());
                         }
                     }
                 }

@@ -93,23 +93,23 @@ namespace Desafio02
             switch (tabla)
             {
                 case "Producto":
-                    FormProducto formProducto = new FormProducto(id);
+                    FormProducto formProducto = new FormProducto(this.Id);
                     formProducto.FormClosed += FormProducto_FormClosed;
                     formProducto.ShowDialog();
                     break;
 
                 case "ProductoVendido":
-                    FormProductoVendido formProductoVendido = new FormProductoVendido(id);
+                    FormProductoVendido formProductoVendido = new FormProductoVendido(this.Id);
                     formProductoVendido.ShowDialog();
                     break;
 
                 case "Usuario":
-                    FormUsuario formUsuario = new FormUsuario(id);
+                    FormUsuario formUsuario = new FormUsuario(this.Id);
                     formUsuario.ShowDialog();
                     break;
 
                 case "Venta":
-                    FormVenta formVenta = new FormVenta(id);
+                    FormVenta formVenta = new FormVenta(this.Id);
                     formVenta.ShowDialog();
                     break;
                 default:
