@@ -138,9 +138,31 @@ namespace Desafio02
                     fprodVendido.FormClosed += FormProductoVendido_FormClosed;
                     fprodVendido.ShowDialog();
                     break;
+
+                case "Usuario":
+                    FormUsuario fUsuario = new FormUsuario(0);
+                    fUsuario.FormClosed += FormUsuario_FormClosed;
+                    fUsuario.ShowDialog();
+                    break;
+
+                case "Venta":
+                    FormVenta fVenta = new FormVenta(0);
+                    fVenta.FormClosed += FormVenta_FormClosed;
+                    fVenta.ShowDialog();
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void FormVenta_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            TraerTabla("Venta");
+        }
+
+        private void FormUsuario_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            TraerTabla("Usuario");
         }
 
         private void FormProductoVendido_FormClosed(object? sender, FormClosedEventArgs e)
