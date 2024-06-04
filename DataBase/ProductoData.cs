@@ -67,7 +67,7 @@ namespace Desafio02.DataBase
 
                     string query = "SELECT Id,Descripcion,Costo,PrecioVenta,Stock,IdUsuario FROM Producto";
                     SqlCommand command = new SqlCommand(query, connection);
-
+                    //using (SqlDataReader reader = command.ExecuteReader())
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

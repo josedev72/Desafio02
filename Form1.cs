@@ -132,9 +132,20 @@ namespace Desafio02
                     fprod.FormClosed += FormProducto_FormClosed;
                     fprod.ShowDialog();
                     break;
+
+                case "ProductoVendido":
+                    FormProductoVendido fprodVendido = new FormProductoVendido(0);
+                    fprodVendido.FormClosed += FormProductoVendido_FormClosed;
+                    fprodVendido.ShowDialog();
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void FormProductoVendido_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            TraerTabla("ProductoVendido");
         }
 
         private void dgvDatos_CellClick(object sender, DataGridViewCellEventArgs e)

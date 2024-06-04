@@ -54,7 +54,6 @@ namespace Desafio02.DataBase
         public static List<ProductoVendido> ListarProductoVendido()
         {
             List<ProductoVendido> lista = new List<ProductoVendido>();
-            //.... Código
 
             try
             {
@@ -62,7 +61,7 @@ namespace Desafio02.DataBase
                 {
                     connection.Open();
 
-                    string query = "SELECT IdProducto, Stock, IdVenta FROM ProductoVendido";
+                    string query = "SELECT Id, IdProducto, Stock, IdVenta FROM ProductoVendido";
                     SqlCommand command = new SqlCommand(query, connection);
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -73,8 +72,8 @@ namespace Desafio02.DataBase
                             
                             ProductoVendido.Id = Convert.ToInt32(reader["Id"].ToString());
                             ProductoVendido.IdProducto = Convert.ToInt32(reader["IdProducto"].ToString());
-                            ProductoVendido.Stock = Convert.ToInt32(reader["Stock"].ToString());
-                            ProductoVendido.IdVenta = Convert.ToInt32(reader["IdVenta"].ToString());
+                            ProductoVendido.Stock = Convert.ToDecimal(reader["Stock"].ToString());
+                            ProductoVendido.IdVenta = Convert.ToDecimal(reader["IdVenta"].ToString());
                         
                             lista.Add(ProductoVendido);
                         }

@@ -13,7 +13,7 @@ namespace Desafio02.Models
 
         public int Id { get; set; }
         public int IdProducto { get; set; } = 0;
-        public int Stock { get; set; } = 0;
+        public decimal Stock { get; set; } = 0;
         public decimal IdVenta { get; set; } = 0;
 
         public ProductoVendido()
