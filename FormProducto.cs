@@ -70,7 +70,7 @@ namespace Desafio02
                 p.IdUsuario = Convert.ToInt32(txtIdUsuario.Text.Trim());
 
                 ProductoData.CrearProducto(p);
-                
+
             }
             else
             {
@@ -93,7 +93,12 @@ namespace Desafio02
                 ProductoData.ModificarProducto(p);
             }
 
-            
+
+            this.Close();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
